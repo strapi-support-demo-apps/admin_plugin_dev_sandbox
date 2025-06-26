@@ -385,6 +385,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.Blocks;
+    coords: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::tweeter.coordinates'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -16,6 +16,10 @@
     },
     "body": {
       "type": "blocks"
+    },
+    "coords": {
+      "type": "customField",
+      "customField": "plugin::tweeter.coordinates"
     }
   }
 }

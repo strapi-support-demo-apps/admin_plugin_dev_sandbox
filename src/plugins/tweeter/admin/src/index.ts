@@ -4,6 +4,7 @@ import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
 import TweetButton from './components/TweetButton';
 import GeneralSettings from './components/Settings/General';
+import CoordinatesField from './components/CoordinatesField';
 
 export default {
   register(app: any) {
@@ -42,6 +43,27 @@ export default {
         },
       ]
     );
+
+    app.customFields.register({
+      name: 'coordinates',
+      pluginId: PLUGIN_ID,
+      type: 'string',
+      intlLabel: {
+        id: 'tweeter.field.label',
+        defaultMessage: 'Coordinates',
+      },
+      intlDescription: {
+        id: 'tweeter.field.description',
+        defaultMessage: 'Latitude and Longitude of a location',
+      },
+      icon: PluginIcon,
+      components: {
+        Input: async () =>
+          import('./components/CoordinatesField').then((module) => ({
+            default: module.CoordinatesField,
+          })),
+      },
+    });
   },
 
   bootstrap(app: any) {
