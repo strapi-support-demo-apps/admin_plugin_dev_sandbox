@@ -176,7 +176,7 @@ const GeneralSettings = async () => {
                     display: 'block',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
-                    textVverflow: 'ellipsis',
+                    textOverflow: 'ellipsis',
                     color: '#ffffff',
                     fontWeight: '600',
                   }}

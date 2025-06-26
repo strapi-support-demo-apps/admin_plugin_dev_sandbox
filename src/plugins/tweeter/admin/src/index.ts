@@ -4,7 +4,6 @@ import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
 import TweetButton from './components/TweetButton';
 import GeneralSettings from './components/Settings/General';
-import CoordinatesField from './components/CoordinatesField';
 
 export default {
   register(app: any) {
@@ -47,7 +46,7 @@ export default {
     app.customFields.register({
       name: 'coordinates',
       pluginId: PLUGIN_ID,
-      type: 'string',
+      type: 'json',
       intlLabel: {
         id: 'tweeter.field.label',
         defaultMessage: 'Coordinates',

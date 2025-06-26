@@ -5,7 +5,7 @@ const register = ({ strapi }: { strapi: Core.Strapi }) => {
   strapi.customFields.register({
     name: 'coordinates',
     plugin: 'tweeter',
-    type: 'string',
+    type: 'json',
   });
 };
 

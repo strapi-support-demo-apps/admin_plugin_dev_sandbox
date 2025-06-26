@@ -14,12 +14,12 @@
     "title": {
       "type": "string"
     },
-    "body": {
-      "type": "blocks"
-    },
     "coords": {
       "type": "customField",
       "customField": "plugin::tweeter.coordinates"
+    },
+    "body_json": {
+      "type": "json"
     }
   }
 }
