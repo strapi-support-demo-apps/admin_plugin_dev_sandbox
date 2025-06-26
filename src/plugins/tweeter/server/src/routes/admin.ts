@@ -18,6 +18,12 @@ const routes = [
     path: '/admin/get_settings',
     handler: 'admin.getSettings',
   },
+
+  {
+    method: 'GET',
+    path: '/admin/get_types',
+    handler: 'admin.getAvailableCollectionTypes',
+  },
 ];
 
 export default routes;

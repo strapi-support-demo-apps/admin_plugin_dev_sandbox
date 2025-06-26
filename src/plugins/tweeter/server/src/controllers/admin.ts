@@ -19,6 +19,7 @@ const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
     ctx.body = { status: 'ok', message: 'tweeted' };
     ctx.status = 200;
   },
+
   async saveSettings(ctx) {
     // load up the store from strapi's core store.
     try {
@@ -31,6 +32,7 @@ const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
       ctx.status = 400;
     }
   },
+
   async getSettings(ctx) {
     const settings = await strapi
       .plugin('tweeter')
@@ -38,6 +40,14 @@ const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
       .store()
       .get({ key: 'supported_apis' });
     return { settings };
+  },
+
+  async getAvailableCollectionTypes(ctx) {
+    const types = strapi.services;
+    const apiEntries = Object.entries(types).filter(([key]) => key.startsWith('api::'));
+    const apiObject = Object.fromEntries(apiEntries);
+
+    return apiObject;
   },
 });
 
